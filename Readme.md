@@ -26,4 +26,4 @@ https://www.figma.com/design/8yjGqXIWFzllwmwJYCHwOk/Malina-pages?node-id=32-5&t=
 3. **Поиск анкет**
 4. **и др.**
 
-Полное описание всех методов доступно по ссылке: [api-spec.yaml](api-spec.yaml)
+Полное описание всех методов доступно по ссылке: [MalinaProject/Malina_server/blob/main/api-spec.yaml](api-spec.yaml)
