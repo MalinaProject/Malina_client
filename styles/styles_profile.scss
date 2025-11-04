@@ -1,0 +1,194 @@
+// Цветовые переменные
+$background-color: #f1d8e2;
+$header-color: #cdf4c0;
+$text-color: #81343d;
+$button-out-color: #f4c0cd;
+$button-in-color: #de7ba1;
+$shadow-color: #C54565;
+
+// Базовые настройки
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  background-color: $background-color;
+  color: $text-color;
+  padding: 0;
+  margin: 0;
+}
+
+input, select, button {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+// Заголовок
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem;
+  background-color: $header-color;
+  width: 100%;
+
+  .menu-btn {
+    background: $button-out-color;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 25%;
+
+    span {
+      display: line;
+      width: 2.3rem;
+      height: 0.3rem;
+      background-color: $button-in-color;
+      border-radius: 0.3rem;
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+
+    img {
+      margin-left: 1rem;
+      height: 4rem;
+      cursor: pointer;
+    }
+  }
+}
+
+// Основной контейнер
+.profile-form {
+  max-width: 900px;
+  margin: 2rem;
+  background-color: $background-color;
+  border-radius: 10px;
+
+  .avatar-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .avatar {
+      position: relative;
+      width: 7.5rem;
+      height: 7.5rem;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+
+      img {
+        position: relative; top: 19%;
+        width: auto;
+        height: 85%;
+      }
+    }
+
+    .edit-button {
+      position: relative; top: 4.5rem; left: -2rem;
+      width: 2.7rem;
+      height: 3rem;
+      border: none;
+      background-color: transparent;
+      background-image: url('/images/pencil.png');
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+    width: 100%;
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      width: 100%;
+
+      .form-group {
+        flex: 1;
+        min-width: 250px;
+
+        label {
+          display: block;
+          font-size: 1.5rem;
+        }
+
+        input, select {
+          width: 100%;
+          padding: 0.75rem;
+          border: none;
+          border-radius: 30px;
+          background-color: $button-out-color;
+          color: $text-color;
+
+          &::placeholder {
+            color: $button-in-color;
+          }
+        }
+
+        input[type="date"] {
+
+
+          &::placeholder {
+            color: $button-in-color;
+          }
+
+        }
+
+        select {
+          appearance: none;
+          background: $button-out-color url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICA8cGF0aCBkPSJNOCAxMS44bC03LTcuM2wuOS0uOEw4IDkuNmw2LjEtNi40LjkuOC03IDcuM3oiIGZpbGw9IiMwMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8L3N2Zz4=') no-repeat right 1rem center;
+          color: $text-color;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      .btn {
+        width: 25rem;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        text-align: center;
+        background-color: $button-out-color;
+        color: $button-in-color;
+        cursor: pointer;
+        filter: drop-shadow(3px 2px $shadow-color);
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
