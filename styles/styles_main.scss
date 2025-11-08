@@ -1,0 +1,115 @@
+// Цветовые переменные
+$background-color: #f1d8e2;
+$header-color: #cdf4c0;
+$text-color: #81343d;
+$card-color: #f4c0cd;
+$button-out-color: #f4c0cd;
+$button-in-color: #de7ba1;
+$shadow-color: #C54565;
+$color-shadow: rgba(0, 0, 0, 0.15);
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: $background-color;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.5rem;
+  background-color: $header-color;
+  width: 100%;
+
+  .menu-btn {
+    background: $button-out-color;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 25%;
+
+    span {
+      display: line;
+      width: 2.3rem;
+      height: 0.3rem;
+      background-color: $button-in-color;
+      border-radius: 0.3rem;
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+
+    img {
+      margin-left: 1rem;
+      height: 4rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 5.5rem);
+    padding: 2rem;
+    gap: 3rem;
+
+    .profile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 70vh;
+        padding: 1.5rem;
+        padding-bottom: 2rem;
+        background-color: $card-color;
+        opacity: 0.4;
+        border-radius: 2rem;
+        box-shadow: 0 0 15px $color-shadow;
+        cursor: pointer;
+
+        // Плавный переход для анимации
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+
+        &__image {
+            width: 100%;
+            height: 18rem;
+            object-fit: cover;
+        }
+
+        label {
+          text-align: center;
+          width: 100%;
+          font-size: clamp(0.3rem, 2.5vw, 1.3rem);
+        }
+
+        &:hover, &:focus {
+            transform: translateY(-5px);
+            outline: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            opacity: 100%;
+        }
+    }
+}
