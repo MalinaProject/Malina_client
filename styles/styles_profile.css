@@ -122,10 +122,11 @@ input, select, button {
 .profile-form form .form-row .form-group input, .profile-form form .form-row .form-group select {
   width: 100%;
   padding: 0.75rem;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 30px;
   background-color: #f4c0cd;
   color: #81343d;
+  outline: none;
 }
 .profile-form form .form-row .form-group input::-moz-placeholder, .profile-form form .form-row .form-group select::-moz-placeholder {
   color: #de7ba1;
@@ -166,4 +167,22 @@ input, select, button {
 }
 .profile-form form .buttons .btn:hover {
   opacity: 0.8;
+}
+
+.input-error {
+  border-color: #FF6B6B;
+  box-shadow: 0 0 4px #FF6B6B;
+}
+
+.error-message {
+  color: #FF6B6B;
+  font-size: 0.8rem;
+  padding-left: 1rem;
+  min-height: 1.25rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.visible {
+  display: block;
 }/*# sourceMappingURL=styles_profile.css.map */

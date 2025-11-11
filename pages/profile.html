@@ -27,15 +27,18 @@
       <button class="edit-button" aria-label="Редактировать аватар"></button>
     </div>
 
-    <form>
+    <!-- 1. Добавляем novalidate -->
+    <form novalidate>
       <div class="form-row">
         <div class="form-group">
           <label for="first-name">Имя</label>
           <input type="text" id="first-name" placeholder="Введите имя" required>
+          <p class="error-message" id="first-name-error"></p>
         </div>
         <div class="form-group">
           <label for="city">Город</label>
           <input type="text" id="city" placeholder="Введите город" required>
+          <p class="error-message" id="city-error"></p>
         </div>
       </div>
 
@@ -43,14 +46,16 @@
         <div class="form-group">
           <label for="last-name">Фамилия</label>
           <input type="text" id="last-name" placeholder="Введите фамилию" required>
+          <p class="error-message" id="last-name-error"></p>
         </div>
         <div class="form-group">
           <label for="gender">Пол</label>
           <select id="gender" required>
-            <option value="" disabled selected>Выберите поле</option>
+            <option value="" disabled selected>Выберите пол</option>
             <option value="male">Мужской</option>
             <option value="female">Женский</option>
           </select>
+          <p class="error-message" id="gender-error"></p>
         </div>
       </div>
 
@@ -58,20 +63,26 @@
         <div class="form-group">
           <label for="region">Регион</label>
           <input type="text" id="region" placeholder="Введите регион" required>
+          <p class="error-message" id="region-error"></p>
         </div>
         <div class="form-group">
           <label for="birth-date">Дата рождения</label>
           <input type="date" id="birth-date" required>
+          <p class="error-message" id="birth-date-error"></p>
         </div>
       </div>
 
       <div class="buttons">
-        <button type="button" class="btn">Добавить информацию о себе</button>
+        <!-- 2. Меняем тип кнопки -->
+        <button type="submit" class="btn">Сохранить изменения</button>
       </div>
       <div class="buttons">
         <button type="button" class="btn">Добавить информацию об увлечениях</button>
       </div>
     </form>
   </main>
+
+  <!-- 3. Подключаем новый JS файл -->
+  <script src="../scripts/profile.js"></script>
 </body>
 </html>

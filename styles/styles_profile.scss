@@ -5,6 +5,7 @@ $text-color: #81343d;
 $button-out-color: #f4c0cd;
 $button-in-color: #de7ba1;
 $shadow-color: #C54565;
+$error-color: #FF6B6B; // Новый цвет для ошибок
 
 // Базовые настройки
 * {
@@ -140,10 +141,11 @@ input, select, button {
         input, select {
           width: 100%;
           padding: 0.75rem;
-          border: none;
+          border: 1px solid transparent; // Добавляем рамку для плавного появления ошибки
           border-radius: 30px;
           background-color: $button-out-color;
           color: $text-color;
+          outline: none;
 
           &::placeholder {
             color: $button-in-color;
@@ -191,4 +193,25 @@ input, select, button {
       }
     }
   }
+}
+
+// Стиль для поля с ошибкой
+.input-error {
+  border-color: $error-color;
+  box-shadow: 0 0 4px $error-color; 
+}
+
+// Стиль для текста ошибки под полем
+.error-message {
+  color: $error-color;
+  font-size: 0.8rem;
+  padding-left: 1rem;
+  min-height: 1.25rem;
+  margin-top: 4px;
+  display: none;
+}
+
+// Класс-помощник для отображения сообщений
+.visible {
+  display: block;
 }
