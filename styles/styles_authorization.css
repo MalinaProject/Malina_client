@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: none;
 }
 
 body {
@@ -62,11 +61,11 @@ input, select, button {
 .authorization-form form input {
   width: 100%;
   padding: 0.8rem 1.5rem;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 30px;
   background-color: #d9d9d9;
-  opacity: 100%;
   color: #9B9797;
+  outline: none;
 }
 .authorization-form form input::-moz-placeholder {
   color: #9B9797;
@@ -78,6 +77,7 @@ input, select, button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .authorization-form form .sign .btn {
   padding: 0.5rem 1.5rem;
@@ -93,4 +93,39 @@ input, select, button {
 }
 .authorization-form form .sign .btn:hover {
   opacity: 0.8;
+}
+
+.input-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+input.input-error {
+  border-color: #FF6B6B;
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+}
+
+.error-message {
+  color: #FF6B6B;
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+  min-height: 1.25rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.error-message-general {
+  color: #FF6B6B;
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 1.25rem;
+  margin-top: -1rem;
+  margin-bottom: -0.5rem;
+  display: none;
+}
+
+.visible {
+  display: block;
 }/*# sourceMappingURL=styles_authorization.css.map */

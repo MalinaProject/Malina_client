@@ -3,13 +3,13 @@ $text-color: #81343d;
 $button-color: #81343D;
 $in-color: #9B9797;
 $input-out-color: #d9d9d9;
+$error-color: #FF6B6B; // Цвет для ошибок
 
 // Базовые настройки
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: none;
 }
 
 body {
@@ -42,7 +42,6 @@ input, select, button {
     display: flex;
     justify-content: center;
 
-
     img {
       margin-left: 1rem;
       height: 4rem;
@@ -61,7 +60,6 @@ input, select, button {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding: 2rem 3rem;
     gap: 1.5rem;
     max-width: 900px;
@@ -76,11 +74,11 @@ input, select, button {
     input {
       width: 100%;
       padding: 0.8rem 1.5rem;
-      border: none;
+      border: 1px solid transparent;
       border-radius: 30px;
       background-color: $input-out-color;
-      opacity: 100%;
       color: $in-color;
+      outline: none;
 
       &::placeholder {
         color: $in-color;
@@ -91,6 +89,7 @@ input, select, button {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
 
       .btn {
         padding: 0.5rem 1.5rem;
@@ -110,4 +109,43 @@ input, select, button {
       }
     }
   }
+}
+
+// Контейнер для поля ввода, чтобы ошибка не двигала другие элементы
+.input-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+input.input-error {
+  border-color: $error-color;
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+}
+
+// Стиль для текста ошибки под полем
+.error-message {
+  color: $error-color;
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+  min-height: 1.25rem;
+  margin-top: 4px;
+  display: none;
+}
+
+// Стиль для общего сообщения об ошибке
+.error-message-general {
+  color: $error-color;
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 1.25rem;
+  margin-top: -1rem;
+  margin-bottom: -0.5rem;
+  display: none;
+}
+
+// Класс-помощник для отображения сообщений
+.visible {
+  display: block;
 }

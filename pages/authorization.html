@@ -16,16 +16,28 @@
 
   <main class="authorization-form">
     <div class="rectangle"></div>
-    <form>
+    <form novalidate>
       <label>Вход в аккаунт</label>
-      <input type="text" id="login" placeholder="Введите логин" required>
-      <input type="password" id="password" placeholder="Введите пароль" required>
+      
+      <div class="input-container">
+        <input type="text" id="login" placeholder="Введите логин" required>
+        <p class="error-message" id="login-error"></p>
+      </div>
+
+      <div class="input-container">
+        <input type="password" id="password" placeholder="Введите пароль" required>
+        <p class="error-message" id="password-error"></p>
+      </div>
+      
+      <p class="error-message-general" id="general-error"></p>
 
       <div class="sign">
         <button type="submit" class="btn">Далее</button>
-        <a href="">Нет аккаунта? Зарегистрироваться...</a>
+        <a style="font-size: 0.8rem;" href="">Нет аккаунта? Зарегистрироваться...</a>
       </div>
     </form>
   </main>
+
+  <script src="../scripts/authorization.js"></script>
 </body>
 </html>
